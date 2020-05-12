@@ -3,7 +3,7 @@ import ListItem from "./ListItem";
 import "./styles/List.css";
 import FormContainer from "./FormContainer";
 
-const List = ({ items, getItems, addItem, removeItem, data }) => {
+const List = ({ items, data, getItems, addItem, removeItem }) => {
 	useEffect(() => {
 		getItems();
 	}, []);
