@@ -22,6 +22,14 @@ export default function items(state = initialState, action) {
 				data: action.data,
 				addItemSuccess: false,
 			};
+		case types.REMOVE_ITEM:
+			let filteredItems = [...state.items.filter((value) => value.uuid !== action.uuid)];
+
+			return {
+				...state,
+				items: [...filteredItems],
+				data: {},
+			}
 		default:
 			return state;
 	}

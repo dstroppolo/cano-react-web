@@ -18,9 +18,10 @@ const List = ({ items, data, getItems, addItem, removeItem }) => {
 
 	const renderListItems = () => {
 		return items.map((item, i) => {
-			return <ListItem key={item.uuid} item={item} row={i} />;
+			return <ListItem key={item.uuid} item={item} row={i} onClick={() => removeItem(item.uuid)} />;
 		});
 	};
+
 
 	return (
 		<>

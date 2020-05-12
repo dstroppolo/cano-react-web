@@ -6,3 +6,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.row{
+  background: none;
+}
+.row:nth-of-type(even){
+  background: lightskyblue;
+}
