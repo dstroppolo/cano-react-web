@@ -2,3 +2,11 @@ td, th {
   text-align: left;
 }
 
+/* Make aletrnating rows different colors*/
+
+table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+table tbody tr:nth-child(even) {
+  background-color: #e5e5e5;
+}
