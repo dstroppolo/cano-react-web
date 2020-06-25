@@ -4,10 +4,10 @@
 
 ## Instructions
 
-- Clone the repository locally
+- Fork the repository
 - Create a new branch called `your-name-dd-mm`
 - Complete the tasks listed below
-- Push to origin on your new branch
+- Open a pull request
 
 ## Tasks
 
