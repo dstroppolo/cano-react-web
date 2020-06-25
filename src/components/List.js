@@ -36,6 +36,7 @@ const List = ({ items, data, getItems, addItem, removeItem }) => {
 				</table>
 			</div>
 			<button onClick={() => addItem(data)}>Add Item</button>
+      <button onClick={() => removeItem(data)}>Remove Item</button>
 		</>
 	);
 };
