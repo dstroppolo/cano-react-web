@@ -1,11 +1,19 @@
 .list-container {
-  width: 50%;
-  height: 50%;
-  border: 2px solid #C9c9c9;
-  overflow-y: scroll;
+    width: 50%;
+    height: 50%;
+    border: 2px solid #C9c9c9;
+    overflow-y: scroll;
+}
+.evenClassName {
+    background-color: green;
+}
+
+.oddClassName {
+
+    background-color: red;
+
 }
 
 .list-container > table {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
 }
