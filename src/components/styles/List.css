@@ -1,11 +1,18 @@
 .list-container {
   width: 50%;
   height: 50%;
-  border: 2px solid #C9c9c9;
+  border: 2px solid #c9c9c9;
   overflow-y: scroll;
 }
 
 .list-container > table {
   border-collapse: collapse;
   width: 100%;
+}
+
+.list-container > table > tbody > tr:nth-child(even) {
+  background: #cc9999;
+}
+.list-container > table > tbody > tr:nth-child(odd) {
+  background: #9999cc;
 }

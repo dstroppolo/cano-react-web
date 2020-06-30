@@ -4,40 +4,42 @@ import "./styles/List.css";
 import FormContainer from "./FormContainer";
 
 const List = ({ items, data, getItems, addItem, removeItem }) => {
-	useEffect(() => {
-		getItems();
-	}, []);
+  useEffect(() => {
+    getItems();
+  }, []);
 
-	const renderHeaderTitles = () => {
-		//get the column names
-		const sampleItem = items[0];
-		return Object.keys(sampleItem).map((key) => {
-			return <th key={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</th>;
-		});
-	};
+  const renderHeaderTitles = () => {
+    //get the column names
+    const sampleItem = items[0];
+    return Object.keys(sampleItem).map((key) => {
+      return <th key={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</th>;
+    });
+  };
 
-	const renderListItems = () => {
-		return items.map((item, i) => {
-			return <ListItem key={item.uuid} item={item} row={i} />;
-		});
-	};
+  const renderListItems = () => {
+    return items.map((item, i) => {
+      return (
+        <ListItem key={item.uuid} item={item} row={i} removeItem={removeItem} />
+      );
+    });
+  };
 
-	return (
-		<>
-			<div className={`list-container`}>
-				<table>
-					<thead>
-						<tr>{renderHeaderTitles()}</tr>
-					</thead>
-					<tbody>
-						{renderListItems()}
-						<FormContainer />
-					</tbody>
-				</table>
-			</div>
-			<button onClick={() => addItem(data)}>Add Item</button>
-		</>
-	);
+  return (
+    <>
+      <div className={`list-container`}>
+        <table>
+          <thead>
+            <tr>{renderHeaderTitles()}</tr>
+          </thead>
+          <tbody>
+            {renderListItems()}
+            <FormContainer />
+          </tbody>
+        </table>
+      </div>
+      <button onClick={() => addItem(data)}>Add Item</button>
+    </>
+  );
 };
 
 export default List;
