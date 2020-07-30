@@ -17,7 +17,7 @@ export default function items(state = initialState, action) {
 				addItemSuccess: true,
 			}
 			case types.REMOVE_ITEM:
-				return state.items.filter(({ uuid }) => uuid !== action.uuid);
+				return state.items.filter(({ item }) => item.uuid === action.data.uuid);
 		case types.ENTER_ITEM_DATA:
 			return {
 				...state,
