@@ -17,7 +17,9 @@ const List = ({ items, data, getItems, addItem, removeItem }) => {
 	};
 
 	const renderListItems = () => {
+		console.log(items)
 		return items.map((item, i) => {
+			
 			return <ListItem key={item.uuid} item={item} row={i} />;
 		});
 	};
@@ -36,6 +38,7 @@ const List = ({ items, data, getItems, addItem, removeItem }) => {
 				</table>
 			</div>
 			<button onClick={() => addItem(data)}>Add Item</button>
+			<button onClick={() => removeItem(items.uuid)}>Remove Item</button>
 		</>
 	);
 };
