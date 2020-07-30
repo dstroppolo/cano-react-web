@@ -9,3 +9,5 @@
   border-collapse: collapse;
   width: 100%;
 }
+tr:nth-child(even) {background:blue}
+tr:nth-child(odd) {background:white}
