@@ -15,13 +15,21 @@ export default function items(state = initialState, action) {
 				items: action.items,
 			}
 		case types.ADD_ITEM:
-			return {
-				...state,
-				items: [...state.items, action.item],
-				data: {},
-				addItemSuccess: true,
+			if (Object.keys(action.item).find(key => action.item[key] === '') === undefined) {
+				if (state.items.find(item => item.uuid === action.item.uuid) === undefined) {
+					return {
+						...state,
+						items: [...state.items, action.item],
+						data: {},
+						addItemSuccess: true,
+					}
+				}
 			}
 
+			return {
+				...state,
+				addItemSuccess: false,
+			}
 		case types.ENTER_ITEM_DATA:
 			return {
 				...state,
