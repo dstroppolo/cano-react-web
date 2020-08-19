@@ -25,8 +25,8 @@ const List = ({ items, data, getItems, setItems, addItem, removeItem }) => {
 		});
 	};
 
-	const loadListItems = () => {
-		const asyncItems = getItemsAsync();
+	const loadListItems = async () => {
+		const asyncItems = await getItemsAsync();
 		setItems(asyncItems);
 	}
 
@@ -44,9 +44,7 @@ const List = ({ items, data, getItems, setItems, addItem, removeItem }) => {
 				</table>
 			</div>
 			<button className='add' onClick={() => addItem(data)}>Add Item</button>
-
 			<button className='reset' onClick={() => loadListItems()}>Reset original items</button>
-
 		</>
 	);
 };

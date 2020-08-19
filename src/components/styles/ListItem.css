@@ -2,3 +2,10 @@ td, th {
   text-align: left;
 }
 
+.even {
+  background-color: #E0BBE4;
+}
+
+.odd {
+  background-color: #ffdfd3;
+}

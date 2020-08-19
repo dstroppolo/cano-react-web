@@ -21,12 +21,18 @@ export default function items(state = initialState, action) {
 				data: {},
 				addItemSuccess: true,
 			}
+
 		case types.ENTER_ITEM_DATA:
 			return {
 				...state,
 				data: action.data,
 				addItemSuccess: false,
 			};
+		case types.REMOVE_ITEM:
+			return {
+				...state,
+				items: state.items.filter(item => item.uuid !== action.uuid )
+			}
 		default:
 			return state;
 	}
