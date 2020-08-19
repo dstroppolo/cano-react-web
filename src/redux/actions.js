@@ -4,6 +4,11 @@ export const getItems = () => ({
 	type: types.GET_ITEMS,
 });
 
+export const setItems = (items) => ({
+	type: types.SET_ITEMS,
+	items,
+});
+
 export const addItem = (item) => ({
 	type: types.ADD_ITEM,
 	item,

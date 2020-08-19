@@ -1,4 +1,4 @@
-const items = [
+export const itemList = [
 	{
 		name: "First item",
 		uuid: "abc123",
@@ -36,4 +36,11 @@ const items = [
 	},
 ];
 
-export default items;
+export const getItemsAsync = () => {
+	const itemsPromise = new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve(itemList);
+		}, 750);
+	});
+	return itemsPromise;
+};

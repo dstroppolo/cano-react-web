@@ -14,8 +14,10 @@ const mapStateToProps = ({items, data}) => {
 const mapDispatchToProps = dispatch => {
   return {
     getItems: () => {
-      console.log('getting');
       dispatch(actions.getItems());
+    },
+    setItems: (items) => {
+      dispatch(actions.setItems(items));
     },
     addItem: item => {
       dispatch(actions.addItem(item));

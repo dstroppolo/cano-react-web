@@ -2,8 +2,11 @@ import React, { useEffect } from "react";
 import ListItem from "./ListItem";
 import "./styles/List.css";
 import FormContainer from "./FormContainer";
+import {getItemsAsync} from '../items';
 
-const List = ({ items, data, getItems, addItem, removeItem }) => {
+
+const List = ({ items, data, getItems, setItems, addItem, removeItem }) => {
+	
 	useEffect(() => {
 		getItems();
 	}, []);
@@ -18,9 +21,14 @@ const List = ({ items, data, getItems, addItem, removeItem }) => {
 
 	const renderListItems = () => {
 		return items.map((item, i) => {
-			return <ListItem key={item.uuid} item={item} row={i} />;
+			return <ListItem key={item.uuid} item={item} row={i} onClick={() => removeItem(item.uuid)} />;
 		});
 	};
+
+	const loadListItems = () => {
+		const asyncItems = getItemsAsync();
+		setItems(asyncItems);
+	}
 
 	return (
 		<>
@@ -35,7 +43,10 @@ const List = ({ items, data, getItems, addItem, removeItem }) => {
 					</tbody>
 				</table>
 			</div>
-			<button onClick={() => addItem(data)}>Add Item</button>
+			<button className='add' onClick={() => addItem(data)}>Add Item</button>
+
+			<button className='reset' onClick={() => loadListItems()}>Reset original items</button>
+
 		</>
 	);
 };

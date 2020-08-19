@@ -1,5 +1,5 @@
 import * as types from "./types";
-import itemList from "../items";
+import {itemList} from "../items";
 
 const initialState = { items: itemList };
 
@@ -9,6 +9,11 @@ export default function items(state = initialState, action) {
 			return {
 				...state,
 			};
+		case types.SET_ITEMS: 
+			return {
+				...state,
+				items: action.items,
+			}
 		case types.ADD_ITEM:
 			return {
 				...state,
