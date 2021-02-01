@@ -1,8 +1,14 @@
 import React from "react";
 import './styles/ListItem.css';
 
+const formatPrice = price => {
+  // This assumes that the price is never null. Fix if otherwise.
+  return `$${price.toFixed(2)}`
+}
+
 const ListItem = ({ item, row }) => {
 	const { name, uuid, description, price, partner } = item;
+	const formattedPrice = formatPrice(price)
 	// Whether row is odd or even. Used to style table with
 	// alternating colors.
 	const className = `row${row % 2}`
@@ -11,7 +17,7 @@ const ListItem = ({ item, row }) => {
 			<td><p>{name}</p></td>
       <td>{uuid}</td>
       <td>{description}</td>
-      <td>{price}</td>
+      <td>{formattedPrice}</td>
       <td>{partner}</td>
 		</tr>
 	);
