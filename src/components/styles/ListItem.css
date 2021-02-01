@@ -2,3 +2,12 @@ td, th {
   text-align: left;
 }
 
+/* Style for even rows */
+tr.row0 {
+  background: #beedca;
+}
+
+/* Style for odd rows */
+tr.row1 {
+  background-color: #c2c6f0
+}
