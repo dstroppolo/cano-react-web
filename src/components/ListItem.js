@@ -6,7 +6,8 @@ const formatPrice = price => {
   return `$${price.toFixed(2)}`
 }
 
-const ListItem = ({ item, row }) => {
+const ListItem = ({ item, row, onClick }) => {
+    console.log(item)
 	const { name, uuid, description, price, partner } = item;
 	const formattedPrice = formatPrice(price)
 	// Whether row is odd or even. Used to style table with
@@ -19,6 +20,9 @@ const ListItem = ({ item, row }) => {
       <td>{description}</td>
       <td>{formattedPrice}</td>
       <td>{partner}</td>
+      <td>
+        <button onClick={onClick}>X</button>
+      </td>
 		</tr>
 	);
 };

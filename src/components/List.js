@@ -6,7 +6,6 @@ import {getItemsAsync} from '../items';
 
 
 const List = ({ items, data, getItems, setItems, addItem, removeItem }) => {
-	
 	useEffect(() => {
 		getItems();
 	}, []);
