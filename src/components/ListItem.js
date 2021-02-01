@@ -7,7 +7,6 @@ const formatPrice = price => {
 }
 
 const ListItem = ({ item, row, onClick }) => {
-    console.log(item)
 	const { name, uuid, description, price, partner } = item;
 	const formattedPrice = formatPrice(price)
 	// Whether row is odd or even. Used to style table with

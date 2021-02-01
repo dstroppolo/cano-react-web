@@ -29,6 +29,26 @@ const List = ({ items, data, getItems, setItems, addItem, removeItem }) => {
 		setItems(asyncItems);
 	}
 
+	const handleAddItem = () => {
+	  // Check no fields are empty
+	  if (Object.values(data).some(item => item === "")) {
+	    // Return silently for now
+	    console.log("Empty data values")
+	    return
+	  }
+	  const existingUuids = items.map(item => item.uuid)
+	  if (existingUuids.includes(data.uuid)) {
+	    // Return silently for now
+	    console.log("Duplicate UUID")
+	    return
+	  }
+
+	  // If checks pass, dispatch action
+	  // Convert price to number since we expect numbers. This is consistent
+	  // with the items in the initial state
+	  addItem({...data, price: Number(data.price)})
+	}
+
 	return (
 		<>
 			<div className={`list-container`}>
@@ -42,7 +62,7 @@ const List = ({ items, data, getItems, setItems, addItem, removeItem }) => {
 					</tbody>
 				</table>
 			</div>
-			<button className='add' onClick={() => addItem(data)}>Add Item</button>
+			<button className='add' onClick={() => handleAddItem()}>Add Item</button>
 
 			<button className='reset' onClick={() => loadListItems()}>Reset original items</button>
 
