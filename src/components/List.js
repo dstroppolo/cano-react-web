@@ -32,13 +32,13 @@ const List = ({ items, data, getItems, setItems, addItem, removeItem }) => {
 	const handleAddItem = () => {
 	  // Check no fields are empty
 	  if (Object.values(data).some(item => item === "")) {
-	    // Return silently for now
+	    // Return silently and log for now
 	    console.log("Empty data values")
 	    return
 	  }
 	  const existingUuids = items.map(item => item.uuid)
 	  if (existingUuids.includes(data.uuid)) {
-	    // Return silently for now
+	    // Return silently and log for now
 	    console.log("Duplicate UUID")
 	    return
 	  }

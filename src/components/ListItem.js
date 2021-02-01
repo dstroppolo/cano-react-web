@@ -2,7 +2,7 @@ import React from "react";
 import './styles/ListItem.css';
 
 const formatPrice = price => {
-  // This assumes that the price is never null. Fix if otherwise.
+  // This assumes that the price is a non-null number. Fix if otherwise.
   return `$${price.toFixed(2)}`
 }
 
