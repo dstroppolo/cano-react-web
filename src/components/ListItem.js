@@ -9,7 +9,7 @@ const ListItem = ({ item, row }) => {
 			<td><p>{name}</p></td>
       <td>{uuid}</td>
       <td>{description}</td>
-      <td>{price}</td>
+      <td>${price.toFixed(2)}</td>
       <td>{partner}</td>
 		</tr>
 	);
