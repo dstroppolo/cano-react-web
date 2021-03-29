@@ -25,8 +25,8 @@ const List = ({ items, data, getItems, setItems, addItem, removeItem }) => {
 		});
 	};
 
-	const loadListItems = () => {
-		const asyncItems = getItemsAsync();
+	const loadListItems = async () => {
+		const asyncItems = await getItemsAsync();
 		setItems(asyncItems);
 	}
 
