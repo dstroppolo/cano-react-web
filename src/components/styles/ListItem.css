@@ -2,3 +2,10 @@ td, th {
   text-align: left;
 }
 
+tr.rowType0 {
+  color: red;
+}
+
+tr.rowType1 {
+  color: blue;
+}
